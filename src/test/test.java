@@ -18,6 +18,33 @@ public class test {
 		return sum;
 	}
 	public static void main(String[] args) {
+		class Instrument {
+		int range, polyphony;
+			public void sound() {
+				System.out.println("The instrument plays");
+			}
+		}
+		class Guitar extends Instrument {
+			//this.range = 36;
+			public void sound() {
+				System.out.println("BRRRT");
+			}
+		}
+		class Drums extends Instrument {
+			public void sound() {
+				System.out.println("donk");
+			}
+		}
+		class Piano extends Instrument {
+			public void sound() {
+				System.out.println("plin plin plon");
+			}
+		}
+		class Brass extends Instrument {
+			public void sound() {
+				System.out.println("Oompah");
+			}
+		}
 		char char_var;
 		boolean bool_var, second_bool_var;
 		final String null_string_var;
@@ -34,6 +61,22 @@ public class test {
 		null_string_var = null;
 		
 		LocalDate current_date = LocalDate.now();
+		
+		Instrument instrument = new Instrument();
+		Guitar gibson = new Guitar();
+		gibson.range = 36;
+		gibson.polyphony = 6;
+		Piano casio = new Piano();
+		casio.range = 60;
+		casio.polyphony = 5;
+		Drums tr808 = new Drums();
+		tr808.range = -1;
+		tr808.polyphony = 4;
+		
+		System.out.println("Testing instruments: ");
+		gibson.sound();
+		casio.sound();
+		tr808.sound();
 		
 		test1();
 		System.out.println(add(bool_var, second_bool_var));
